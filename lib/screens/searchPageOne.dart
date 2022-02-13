@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:isl_counter/models/myColors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dio/dio.dart';
+import 'package:isl_counter/screens/LandingPageOne.dart';
 
 class searchPageOne extends StatefulWidget {
   const searchPageOne({Key? key}) : super(key: key);
@@ -65,9 +67,13 @@ class _searchPageOneState extends State<searchPageOne>
                   text: 'para',
                 )
               ]),
-          leading: Icon(
-            Icons.home,
-            color: myColors.txt,
+          leading: IconButton(
+            onPressed: () =>
+                {Get.to(landingPageOne(), transition: Transition.rightToLeft)},
+            icon: Icon(
+              Icons.home_filled,
+              color: myColors.txt,
+            ),
           ),
           centerTitle: true,
           title: Text(
