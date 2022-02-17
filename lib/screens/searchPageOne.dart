@@ -6,6 +6,7 @@ import 'package:isl_counter/models/myColors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dio/dio.dart';
 import 'package:isl_counter/screens/LandingPageOne.dart';
+import 'package:isl_counter/screens/juzViewer.dart';
 
 class searchPageOne extends StatefulWidget {
   const searchPageOne({Key? key}) : super(key: key);
@@ -90,7 +91,7 @@ class _searchPageOneState extends State<searchPageOne>
               body: Column(children: [
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     height: 40,
@@ -118,7 +119,9 @@ class _searchPageOneState extends State<searchPageOne>
                       itemCount: listofsurah.length,
                       itemBuilder: (context, index) {
                         return InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(juzViewer());
+                          },
                           child: ListTile(
                             leading: CircleAvatar(
                               child: Padding(

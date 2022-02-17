@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:isl_counter/screens/landingPageOne.dart';
 import 'package:isl_counter/screens/searchPageOne.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: searchPageOne(),
+      home: landingPageOne(),
     );
   }
 }

@@ -2,34 +2,49 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:isl_counter/models/myColors.dart';
 
-Widget homeButton() {
+Widget homeButton({required String iconUrl, required String label}) {
   return InkWell(
     onTap: () => {print('object')},
     child: Container(
-      width: 100,
-      height: 100,
+      width: 110,
+      height: 80,
       padding: EdgeInsets.all(5),
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Color.fromARGB(255, 255, 255, 255)),
+          border:
+              Border.all(color: Color.fromARGB(255, 255, 255, 255), width: 2),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.1, 0.9],
+            colors: [
+              Color.fromARGB(255, 255, 255, 255),
+              Color.fromARGB(255, 227, 235, 241),
+            ],
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          color: Color.fromARGB(255, 241, 241, 241)),
       child: Stack(
         children: [
           Positioned(
               child: Container(
             alignment: Alignment.topCenter,
             child: Container(
-                width: 70,
-                height: 70,
+                width: 50,
+                height: 50,
                 color: Colors.transparent,
-                child: Image(image: AssetImage('assets/PrayIcon.png'))),
+                child: Image(image: AssetImage(iconUrl))),
           )),
           Positioned(
-              width: 90,
+              width: 100,
               bottom: 0,
               child: Text(
-                'Pray Times',
+                label,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.openSans(fontSize: 12, color: myColors.txt),
+                style: GoogleFonts.openSans(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15,
+                    color: Color.fromARGB(255, 6, 65, 65)),
               ))
         ],
       ),
