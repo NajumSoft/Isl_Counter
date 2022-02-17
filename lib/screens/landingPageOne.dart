@@ -24,8 +24,8 @@ class _landingPageOneState extends State<landingPageOne> {
           end: Alignment.bottomRight,
           stops: [0.1, 0.9],
           colors: [
-            Color.fromARGB(255, 246, 247, 248),
-            Color.fromARGB(255, 233, 236, 238),
+            Color.fromARGB(255, 237, 243, 247),
+            Color.fromARGB(255, 237, 243, 247),
           ],
         ),
       ),
@@ -46,6 +46,7 @@ class _landingPageOneState extends State<landingPageOne> {
         body: Container(
           padding: EdgeInsets.all(10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Wrap(
                 children: [
@@ -68,8 +69,11 @@ class _landingPageOneState extends State<landingPageOne> {
                             end: Alignment.bottomRight,
                             stops: [0.1, 0.9],
                             colors: [
-                              Color.fromARGB(99, 69, 32, 83),
-                              Color.fromARGB(100, 135, 203, 255),
+                              Color.fromARGB(97, 71, 14, 124),
+                              Color.fromARGB(99, 4, 91, 158),
+
+                              //         Color.fromARGB(99, 69, 32, 83),
+                              //     Color.fromARGB(100, 135, 203, 255),
                             ],
                           ),
                         ),
@@ -78,7 +82,7 @@ class _landingPageOneState extends State<landingPageOne> {
                         top: 20,
                         left: 20,
                         child: Container(
-                            height: 100,
+                            height: 120,
                             color: Colors.transparent,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -86,24 +90,27 @@ class _landingPageOneState extends State<landingPageOne> {
                               children: [
                                 Text(
                                   'Magrib',
-                                  style: GoogleFonts.openSans(
-                                      fontSize: 15,
+                                  style: GoogleFonts.lato(
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.white),
+                                      color:
+                                          Color.fromARGB(255, 241, 237, 237)),
                                 ),
                                 Text(
                                   '17:34',
-                                  style: GoogleFonts.openSans(
+                                  style: GoogleFonts.lato(
                                       fontSize: 40,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white),
+                                      fontWeight: FontWeight.w700,
+                                      color:
+                                          Color.fromARGB(255, 241, 237, 237)),
                                 ),
                                 Text(
                                   'Sep-Wednessday-2022',
-                                  style: GoogleFonts.openSans(
+                                  style: GoogleFonts.lato(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.white),
+                                      color:
+                                          Color.fromARGB(255, 241, 237, 237)),
                                 )
                               ],
                             )),
@@ -117,6 +124,43 @@ class _landingPageOneState extends State<landingPageOne> {
                   homeButton(iconUrl: 'assets/quran.png', label: 'Dua'),
                   homeButton(iconUrl: 'assets/quran.png', label: 'Pray Time'),
                 ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                child: Text(
+                  'Play Al-Quran',
+                  style: GoogleFonts.lato(
+                      fontSize: 30, fontWeight: FontWeight.w500),
+                ),
+              ),
+              Container(
+                height: 150,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: ((context, index) => Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        width: 300,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            stops: [0.1, 0.9],
+                            colors: [
+                              Color.fromARGB(95, 202, 186, 218),
+                              Color.fromARGB(98, 149, 165, 177),
+
+                              //         Color.fromARGB(99, 69, 32, 83),
+                              //     Color.fromARGB(100, 135, 203, 255),
+                            ],
+                          ),
+                        ),
+                      )),
+                ),
               )
             ],
           ),
