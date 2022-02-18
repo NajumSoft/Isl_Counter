@@ -23,7 +23,7 @@ class _searchPageOneState extends State<searchPageOne>
     var dio = Dio();
     final response = await dio.get('http://api.alquran.cloud/v1/surah');
     listofsurah = response.data['data'];
-    print(listofsurah);
+    print(response.data['data']);
     setState(() {});
   }
 

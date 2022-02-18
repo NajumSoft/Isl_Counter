@@ -41,109 +41,124 @@ class _landingPageOneState extends State<landingPageOne> {
             ),
           ),
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: Colors.transparent,
         ),
         body: Container(
           padding: EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Stack(children: [
+                Positioned(
+                    top: 0,
+                    right: 0,
+                    width: 200,
+                    height: 150,
+                    child: Image(image: AssetImage('assets/mosque3.png'))),
+                Container(
+                  width: 400,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      stops: [0.1, 0.9],
+                      colors: [
+                        Color.fromARGB(97, 71, 14, 124),
+                        Color.fromARGB(99, 4, 91, 158),
+
+                        //         Color.fromARGB(99, 69, 32, 83),
+                        //     Color.fromARGB(100, 135, 203, 255),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 20,
+                  left: 20,
+                  child: Container(
+                      height: 120,
+                      color: Colors.transparent,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Magrib',
+                            style: GoogleFonts.lato(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
+                                color: Color.fromARGB(255, 241, 237, 237)),
+                          ),
+                          Text(
+                            '17:34',
+                            style: GoogleFonts.lato(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w700,
+                                color: Color.fromARGB(255, 241, 237, 237)),
+                          ),
+                          Text(
+                            'Sep-Wednessday-2022',
+                            style: GoogleFonts.lato(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Color.fromARGB(255, 241, 237, 237)),
+                          )
+                        ],
+                      )),
+                )
+              ]),
+              SizedBox(
+                height: 10,
+              ),
               Wrap(
                 children: [
-                  Container(
-                    child: Stack(children: [
-                      Positioned(
-                          top: 0,
-                          right: 0,
-                          width: 200,
-                          height: 150,
-                          child:
-                              Image(image: AssetImage('assets/mosque3.png'))),
-                      Container(
-                        width: 400,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.1, 0.9],
-                            colors: [
-                              Color.fromARGB(97, 71, 14, 124),
-                              Color.fromARGB(99, 4, 91, 158),
-
-                              //         Color.fromARGB(99, 69, 32, 83),
-                              //     Color.fromARGB(100, 135, 203, 255),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 20,
-                        left: 20,
-                        child: Container(
-                            height: 120,
-                            color: Colors.transparent,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Magrib',
-                                  style: GoogleFonts.lato(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w400,
-                                      color:
-                                          Color.fromARGB(255, 241, 237, 237)),
-                                ),
-                                Text(
-                                  '17:34',
-                                  style: GoogleFonts.lato(
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.w700,
-                                      color:
-                                          Color.fromARGB(255, 241, 237, 237)),
-                                ),
-                                Text(
-                                  'Sep-Wednessday-2022',
-                                  style: GoogleFonts.lato(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color:
-                                          Color.fromARGB(255, 241, 237, 237)),
-                                )
-                              ],
-                            )),
-                      )
-                    ]),
-                  ),
-                  homeButton(iconUrl: 'assets/dua2.png', label: 'Dua'),
-                  homeButton(iconUrl: 'assets/quran.png', label: 'Al-Quran'),
-                  homeButton(iconUrl: 'assets/mosque.png', label: 'Pray Time'),
-                  homeButton(iconUrl: 'assets/tasbeeh.png', label: 'Tasbeeh'),
-                  homeButton(iconUrl: 'assets/quran.png', label: 'Dua'),
-                  homeButton(iconUrl: 'assets/quran.png', label: 'Pray Time'),
+                  homeButton(
+                      iconUrl: 'assets/dua2.png',
+                      label: 'Dua',
+                      context: context),
+                  homeButton(
+                      iconUrl: 'assets/quran.png',
+                      label: 'Al-Quran',
+                      context: context),
+                  homeButton(
+                      iconUrl: 'assets/mosque.png',
+                      label: 'Pray Time',
+                      context: context),
+                  homeButton(
+                      iconUrl: 'assets/tasbeeh.png',
+                      label: 'Tasbeeh',
+                      context: context),
+                  homeButton(
+                      iconUrl: 'assets/compass.png',
+                      label: 'Compass',
+                      context: context),
+                  homeButton(
+                      iconUrl: 'assets/hadees.png',
+                      label: 'Hadees',
+                      context: context),
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 10,
               ),
               Container(
                 margin: EdgeInsets.all(10),
                 child: Text(
-                  'Play Al-Quran',
+                  'Al-Afasie ',
                   style: GoogleFonts.lato(
-                      fontSize: 30, fontWeight: FontWeight.w500),
+                      fontSize: 25, fontWeight: FontWeight.w500),
                 ),
               ),
               Container(
                 height: 150,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 3,
+                  itemCount: 10,
                   itemBuilder: ((context, index) => Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        width: 300,
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        width: MediaQuery.of(context).size.width * .75,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           gradient: LinearGradient(
